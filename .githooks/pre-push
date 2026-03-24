@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+cd "${ROOT_DIR}"
+
+echo "[pre-push] 运行 clang-format 自动格式化..."
+"${ROOT_DIR}/scripts/format.sh"
+
+if ! git diff --quiet --; then
+    echo "[pre-push] 检测到格式化修改，已阻止 push。"
+    echo "[pre-push] 请执行：git add -A && git commit -m \"format: apply clang-format\""
+    exit 1
+fi
+
+echo "[pre-push] 格式检查通过，允许 push。"

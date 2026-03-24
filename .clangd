@@ -1,0 +1,7 @@
+CompileFlags:
+  # 在仓库根执行一次：cmake -S . -B build
+  # 会生成 build/compile_commands.json，其中已包含 -std=、-I 等真实编译参数（含 gtest）。
+  CompilationDatabase: build
+
+  # 若某次工具链带了与本机不符的选项，可在此剥掉
+  Remove: [-march=native]

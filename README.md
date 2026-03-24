@@ -13,7 +13,11 @@ LoongRisc 仿真器开发仓库。
 ## 代码结构
 
 - `sim/`：仿真器代码（按模块拆分，`.h/.cc` 同目录，分层 CMake）
-- `tests/`：基于 gtest 的指令级单元测试
+- `test/`：基于 gtest 的指令级单元测试
+
+## clangd
+
+配置在 `.clangd`：使用相对路径 `CompilationDatabase: build`。首次配置工程后执行 `cmake -S . -B build` 会生成 `build/compile_commands.json`，无需在 `.clangd` 里写绝对路径或 `${CMAKE_SOURCE_DIR}`。
 
 ## 运行测试
 
@@ -48,3 +52,9 @@ ctest --test-dir build --output-on-failure
 3. 无改动则允许 push
 
 ## 编译方式
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+

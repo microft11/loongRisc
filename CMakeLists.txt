@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 project(loongrisc_simulator CXX)
 
+# 供 clangd / IDE 使用：生成 build/compile_commands.json（路径固定为相对仓库根的 build/）
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)

@@ -88,7 +88,7 @@ DecodedInstruction decode(std::uint32_t raw) {
   return insn;
 }
 
-std::string op_to_string(Op op) {
+std::string opToString(Op op) {
   switch (op) {
   case Op::kAdd:
     return "ADD";
@@ -123,7 +123,7 @@ std::string op_to_string(Op op) {
   }
 }
 
-std::int32_t sign_extend_16(std::uint16_t imm16) {
+std::int32_t signExtend16(std::uint16_t imm16) {
   return static_cast<std::int16_t>(imm16);
 }
 

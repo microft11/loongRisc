@@ -11,12 +11,12 @@ namespace loongrisc {
 
 class Simulator {
 public:
-  explicit Simulator(std::size_t memory_bytes);
+  explicit Simulator(std::size_t memoryBytes);
 
-  void load_program_words(const std::vector<std::uint32_t>& words,
-                          std::uint32_t base_addr = 0);
+  void loadProgramWords(const std::vector<std::uint32_t>& words,
+                        std::uint32_t baseAddr = 0);
   bool step(bool trace = false);
-  void run(std::size_t max_steps, bool trace = false);
+  void run(std::size_t maxSteps, bool trace = false);
 
   CpuState& state() {
     return state_;
